@@ -5,10 +5,14 @@ import _ from "lodash"
 
 const NUMBER_OF_CHOICES = 4
 
-const toDisplayableComponent = (listItem) => {
+const toDisplayableComponent = (movie) => {
   return (
-    <Grid item xs={3} key={listItem}>
-      <Paper elevation={5}>{listItem}</Paper>
+    <Grid item xs={3} key={movie.id}>
+      <Paper elevation={5}>
+        <img src={movie.poster[0].url} />
+        <br />
+        {movie.name} ({movie.releaseYear})
+      </Paper>
     </Grid>
   )
 }
@@ -17,6 +21,7 @@ export const MovieList = (props) => {
   let [movies] = useQuery(getMovies, {})
   let movieChoices = _.sampleSize(movies, NUMBER_OF_CHOICES)
   console.log(movieChoices)
+  movieChoices = _.sortBy(movieChoices, ["name"])
   movieChoices = movieChoices.map(toDisplayableComponent)
 
   return (

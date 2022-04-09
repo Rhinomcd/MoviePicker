@@ -32,10 +32,12 @@
     "@prisma/client": "3.12.0",
     "blitz": "0.45.3",
     "final-form": "4.20.6",
+    "node-fetch": "3.2.3",
     "react": "18.0.0-beta-149b420f6-20211119",
     "react-dom": "18.0.0-alpha-5ca4b0433-20211020",
     "react-final-form": "6.5.9",
-    "zod": "3.14.4"
+    "zod": "3.14.4",
+    "zod-to-ts": "0.2.2"
   },
   "devDependencies": {
     "@types/preview-email": "2.0.1",
