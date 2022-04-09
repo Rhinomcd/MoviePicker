@@ -1,7 +1,7 @@
 FROM node:16
 
 #TODO: add db url
-ARG DATABASE_URL=localhost
+ARG DATABASE_URL="file:./db/prisma/db.sqlite"
 ARG PORT=3000
 ENV DATABASE_URL ${DATABASE_URL}
 
