@@ -7,14 +7,14 @@ ENV DATABASE_URL ${DATABASE_URL}
 
 WORKDIR /usr/src/app
 
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 COPY db/ ./db/
-RUN yarn install --frozen-lockfile
-RUN yarn blitz prisma migrate deploy
+RUN npm ci
+RUN npx blitz prisma migrate deploy
 
 COPY . .
-RUN yarn build
+RUN npm run build
 
 EXPOSE ${PORT}
 
-CMD yarn start -p ${PORT}
+CMD npm run start
