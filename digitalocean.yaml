@@ -1,0 +1,14 @@
+name: movie-picker
+region: sfo
+services:
+  - http_port: 3000
+    image:
+      registry: rhinomcd
+      registry_type: DOCKER_HUB
+      repository: movie-picker
+      tag: latest
+    instance_count: 1
+    instance_size_slug: basic-xs
+    name: rhinomcd-movie-picker
+    routes:
+      - path: /
