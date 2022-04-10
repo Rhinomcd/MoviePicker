@@ -24,4 +24,4 @@ jobs:
           push: true
           tags: rhinomcd/movie-picker:latest
           build-args: |
-            SESSION_SECRET_KEY: ${{ secrets.SESSION_SECRET_KEY }}
+            SESSION_SECRET_KEY=${{ secrets.SESSION_SECRET_KEY }}
